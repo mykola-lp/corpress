@@ -5,12 +5,15 @@
   /* Colors. */
   --white:                          #FFFFFF;
   --black:                          #000000;
+  --basalt-grey:                    #999999;
 
-  --primary-color:                  ;
-  --secondary-color:                ;
-  --tertiary-color:                 ;
+  --primary-color:                  #3353EA;
+  --secondary-color:                #333333;
+  --tertiary-color:                 #666666;
 
-  --rgb-light-bg-color:             ;
+  --border-color:                   #DDDDDD;
+
+  --box-shadow-color:               #DDDDDD;
 
   /* Font family. */
   --ff-body:                        "Montserrat", sans-serif;
@@ -27,6 +30,9 @@
   --fw-heavy-black:                 900;
 }
 
+/*==============================================================
+  # General.
+==============================================================*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -35,6 +41,89 @@
 
 body {
   font-family: var(--ff-body);
-  font-weight: var(--fw-normal);
+  font-weight: var(--fw-medium);
+  font-size: 14px;
+  line-height: 24px;
   background-color: var(--white);
+}
+
+/* --- Links. --- */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*==============================================================
+  # Header.
+==============================================================*/
+.header {
+  background-color: inherit;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Top-bar --- */
+.contact-info,
+.social-media {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-info {
+  float: left;
+  padding-top: 5px;
+}
+
+.contact-info ul li {
+  display: inline-block;
+  color: var(--tertiary-color);
+  font-size: 13px;
+}
+
+.contact-info ul li a {
+  color: inherit;
+}
+
+.contact-info ul li i {
+  color: var(--primary-color);
+  padding: 0 10px;
+}
+
+.social-media {
+  float: right;
+}
+
+.social-media ul li {
+  display: inline-block;
+}
+
+.social-media ul,
+.quote-button {
+  display: inline;
+}
+
+.social-media ul li {
+  padding: 5px;
+}
+
+.social-media ul li i {
+  color: var(--basalt-grey);
+  font-size: 13px;
+}
+
+.quote-button {
+  margin-left: 10px;
+}
+
+.quote-button .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  background-color: var(--primary-color);
+  border-radius: 0;
+  color: var(--white);
 }
