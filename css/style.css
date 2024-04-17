@@ -5,6 +5,7 @@
   /* Colors. */
   --white:                          #FFFFFF;
   --black:                          #000000;
+  --red:                            #F44336;
   --basalt-grey:                    #999999;
   --boulder-gray-grey:              #777777;
 
@@ -275,8 +276,6 @@ ul {
   transform: scaleY(0);
   box-shadow: 0 4px 7px var(--basalt-grey);
   transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
 }
 
 .search-top.active .search-form {
@@ -293,8 +292,6 @@ ul {
   border-radius: 3px;
   line-height: 45px;
   transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
 }
 
 .search-form button {
@@ -312,6 +309,92 @@ ul {
   color: var(--secondary-color);
 }
 
+/* --- Sidebar -- */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 1;
+  width: 25%;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: 0 0 10px var(--basalt-grey);
+  transition: all 0.7s ease, opacity 0.5s ease, visibility 0s 0.9s;
+}
 
+.sidebar-menu.active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
 
+.sidebar-menu .cross {
+  color: var(--red);
+  cursor: pointer;
+  margin: 15px 20px;
+  font-size: 17px;
+}
 
+.sidebar-menu .content {
+  margin: 0 50px;
+}
+
+.content .line {
+  padding: 10px 0;
+}
+
+.content h4 {
+  position: relative;
+  padding: 10px 0;
+  font-weight: var(--fw-semibold);
+  font-size: 17px;
+  text-transform: capitalize;
+}
+
+.content h4:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 38px;
+  background-color: var(--primary-color);
+}
+
+.content .line p {
+  text-align: justify;
+}
+
+.content .menu-links li a {
+  color: inherit;
+  text-transform: capitalize;
+}
+
+.content .menu-links li a:hover {
+  color: var(--primary-color);
+}
+
+.content .social li {
+  display: inline-block;
+  margin: 5px 7px 0 0;
+}
+
+.content .social li a {
+  display: block;
+  height: 35px;
+  width: 35px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--basalt-grey);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 100%;
+}
+
+.social li a:hover,
+.social li.active a {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: transparent;
+}
