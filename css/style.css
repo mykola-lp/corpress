@@ -6,6 +6,7 @@
   --white:                          #FFFFFF;
   --black:                          #000000;
   --basalt-grey:                    #999999;
+  --boulder-gray-grey:              #777777;
 
   --primary-color:                  #3353EA;
   --secondary-color:                #333333;
@@ -63,10 +64,13 @@ ul {
 ==============================================================*/
 .header {
   background-color: inherit;
-  border-bottom: 1px solid var(--border-color);
 }
 
 /* --- Top-bar --- */
+.top-bar {
+  border-bottom: 1px solid var(--border-color);
+}
+
 .contact-info,
 .social-media {
   display: inline-block;
@@ -115,6 +119,10 @@ ul {
   font-size: 13px;
 }
 
+.social-media ul li i:hover {
+  color: var(--primary-color);
+}
+
 .quote-button {
   margin-left: 10px;
 }
@@ -127,3 +135,183 @@ ul {
   border-radius: 0;
   color: var(--white);
 }
+
+/* --- Main Menu. --- */
+.main-menu {
+  padding: 15px 0;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu ul li a {
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 3px;
+}
+
+.menu ul li a {
+  /*margin-right: 7px;*/
+}
+
+.menu li a {
+  color: var(--boulder-gray-grey);
+}
+
+.menu li.active a,
+.menu li a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+
+.menu li .dropdown {
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  width: 200px;
+  background-color: var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
+  box-shadow: 0 5px 5px #3333334d;
+  transition: opacity 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  visibility: hidden;
+}
+
+.menu li:hover .dropdown {
+  visibility: visible;
+}
+
+.menu .dropdown li {
+  margin: 0;
+  padding: 0;
+}
+
+.menu .dropdown li a {
+  display: block;
+  position: relative;
+  padding: 12px 15px;
+  color: var(--secondary-color);
+  background-color: var(--white);
+  font-weight: var(--fw-normal);
+  text-transform: capitalize;
+  border-radius: 0;
+}
+
+.menu .dropdown li a:hover {
+  padding-left: 20px;
+}
+
+.menu .dropdown li i {
+  font-size: 9px;
+  margin-top: 4px;
+  float: right;
+}
+
+.menu .dropdown li:hover a {
+  color: var(--primary-color);
+}
+
+/* --- Sub Dropdown. --- */
+.menu .dropdown {
+  position: relative;
+}
+
+.menu .dropdown .sub-dropdown {
+  position: absolute;
+  top: 0;
+  left: 110%;
+  color: var(--secondary-color);
+  width: 190px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu .dropdown li:hover .sub-dropdown {
+  visibility: visible;
+  opacity: 1;
+  left: 100%;
+}
+
+.dropdown .sub-dropdown li a {
+  color: var(--secondary-color);
+}
+
+.dropdown .sub-dropdown li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- Right Bar. --- */
+.right-bar {
+  padding: 0 25px;
+}
+
+.right-bar .search {
+  margin-right: 10px;
+}
+
+.right-bar a {
+  font-size: 15px;
+}
+
+/* --- Search. --- */
+.search-form {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--border-color);
+  padding: 7px;
+  border-radius: 5px;
+  transform: scaleY(0);
+  box-shadow: 0 4px 7px var(--basalt-grey);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
+
+.search-top.active .search-form {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+.search-form input {
+  padding: 0 45px 0 20px;
+  background-color: var(--white);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 3px;
+  line-height: 45px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+}
+
+.search-form button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.search-form button:hover {
+  color: var(--secondary-color);
+}
+
+
+
+
